@@ -1,0 +1,13 @@
+<h1>YEP THESE ARE THE LIST DETAILS ALRIGHT</h1>
+<h3><%= @list.name %></h3>
+<ul>
+<% @list.bookmarks.each do |bookmark| %>
+  <li><%= bookmark.movie.title %></li>
+  <li><%= bookmark.comment %></li>
+  <%= form_with(model: bookmark, url: bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" }) do %>
+    <%= submit_tag 'Delete movie from list' %>
+  <% end %>
+<% end %>
+</ul>
+<%= link_to "Add movies to the list", new_list_bookmark_path(@list) %>
+<%= link_to "Back", lists_path %>
