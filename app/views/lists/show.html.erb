@@ -1,5 +1,11 @@
 <h1>YEP THESE ARE THE LIST DETAILS ALRIGHT</h1>
 <h3><%= @list.name %></h3>
+<h4>Would you look at that, there's even an image now</h4>
+<% if @list.photo.attached? %>
+  <%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>
+<% end %>
+<p>Kinda crzay if you think about it</p>
+<p>cray cray even</p>
 <ul>
 <% @list.bookmarks.each do |bookmark| %>
   <li><%= bookmark.movie.title %></li>
