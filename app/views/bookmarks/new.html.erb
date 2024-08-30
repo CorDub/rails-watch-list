@@ -1,6 +1,6 @@
 <h1>Add a movie to the list</h1>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
-  <%= f.association :movie, as: :check_boxes %>
+  <%= f.association :movie, prompt: "Select a movie", input_html: {data: {controller: "tom-select"}} %>
   <%= f.submit %>
 <% end %>
