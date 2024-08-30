@@ -2,7 +2,7 @@
 <h3><%= @list.name %></h3>
 <h4>Would you look at that, there's even an image now</h4>
 <% if @list.photo.attached? %>
-  <%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 <p>Kinda crzay if you think about it</p>
 <p>cray cray even</p>
